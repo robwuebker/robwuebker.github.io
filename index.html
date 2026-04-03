@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROꓭƎRꓕWUƎꓭKƎR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #37352f;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 60px 120px;
+    }
+
+    /* ── Page title ── */
+    h1.page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+
+    /* ── Profile aside ── */
+    .profile {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: #f7f6f3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+
+    .profile img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .profile-text {
+      flex: 1;
+    }
+
+    .profile-text p {
+      color: #37352f;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .profile-text a {
+      color: #37352f;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .profile-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .profile-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #37352f;
+      text-decoration: none;
+      padding: 4px 12px;
+      border: 1px solid #d3d1cb;
+      border-radius: 4px;
+      background: #ffffff;
+      transition: background 0.15s;
+    }
+
+    .profile-links a:hover { background: #ece9e2; }
+
+    /* ── Section headers ── */
+    h2.section-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      margin-top: 0;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid #e9e9e7;
+      margin-bottom: 20px;
+    }
+
+    section { margin-bottom: 56px; }
+
+    /* ── Paper / course toggle items ── */
+    details {
+      border-radius: 4px;
+      margin-bottom: 2px;
+    }
+
+    details + details { margin-top: 0; }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      transition: background 0.1s;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary:hover { background: #f7f6f3; }
+
+    .toggle-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9b9a97;
+      font-size: 11px;
+      transition: transform 0.15s;
+      padding-top: 2px;
+    }
+
+    details[open] > summary .toggle-icon {
+      transform: rotate(90deg);
+    }
+
+    .item-content { flex: 1; }
+
+    .item-title {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #37352f;
+      line-height: 1.4;
+    }
+
+    .item-title a {
+      color: #37352f;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #b7b5b0;
+    }
+
+    .item-title a:hover {
+      text-decoration-color: #37352f;
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+      color: #9b9a97;
+      margin-top: 2px;
+    }
+
+    .item-meta .journal {
+      color: #787774;
+      font-style: italic;
+    }
+
+    .item-meta .status {
+      color: #9b9a97;
+    }
+
+    .abstract {
+      padding: 10px 10px 10px 38px;
+      font-size: 0.875rem;
+      color: #787774;
+      line-height: 1.65;
+    }
+
+    /* ── Course items ── */
+    .course-description {
+      padding: 10px 10px 10px 38px;
+      font-size: 0.875rem;
+      color: #787774;
+      line-height: 1.65;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .page { padding: 40px 24px 80px; }
+      h1.page-title { font-size: 1.9rem; }
+      .profile { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1 class="page-title">ROꓭƎRꓕWUƎꓭKƎR</h1>
+
+  <!-- Profile -->
+  <div class="profile">
+    <img src="profile.png" alt="Rob Wuebker" />
+    <div class="profile-text">
+      <p>
+        Associate Professor in the <a href="https://eccles.utah.edu/faculty/department-entrepreneurship-strategy/">Department of Entrepreneurship and Strategy</a>
+        at the David Eccles School of Business, University of Utah.
+        Affiliated faculty, the <a href="https://www.price.utah.edu/">John and Marcia Price College of Engineering</a>, University of Utah.
+      </p>
+      <p>My research and teaching focus on entrepreneurship and the entrepreneurial process.</p>
+      <div class="profile-links">
+        <a href="https://www.dropbox.com/s/dn1y8qjit63d4h2/%23%20CV%20-%20rwuebker.pdf?dl=0" target="_blank">CV</a>
+        <a href="https://scholar.google.com/citations?user=xrdLKoIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Working Papers -->
+  <section>
+    <h2 class="section-heading">Working Papers</h2>
+    <hr class="section-divider" />
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title">Entrepreneurial Relocation And The Geography Of Emerging Technologies</div>
+          <div class="item-meta"><span class="status">With Davidson Heath and Nathan Seegert · Working paper available upon request</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Entrepreneurs face a fundamental strategic question—whether relocation yields generic productivity gains from dense ecosystems or advantages that depend on alignment with technology-specific knowledge in that ecosystem. We address this question using open-source software, a setting that equalizes access to codified knowledge while preserving variation in geographic proximity. Leveraging a novel panel of 225,000 developers across 490,000 projects, within-individual designs compare coder output before and after relocation. Results reveal that productivity gains are not broad-based, but instead are concentrated in projects whose technological genealogy matches the destination hub, particularly in early-stage, tacit knowledge domains. A quasi-natural experiment further supports a proximity-based mechanism.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title">The Impact of Generative AI On The Ability Of Entrepreneurial Opportunities To Generate Sustained Competitive Advantage</div>
+          <div class="item-meta"><span class="status">With Haiyang Zhang and Jay Barney · Working paper available upon request</span></div>
+        </div>
+      </summary>
+      <div class="abstract">This paper examines how generative artificial intelligence affects the ability of entrepreneurial opportunities to generate sustained competitive advantage. We argue that generative AI's impact is conditional on how those opportunities are formed. Discovery opportunities originate from exogenous industry shocks; generative AI is likely to reduce advantages from these opportunities by commoditizing opportunity recognition. Creation opportunities emerge endogenously through entrepreneurial action and interaction with the environment; generative AI cannot fully resolve the inherent Knightian uncertainty, so sustained advantage depends on whether resources and capabilities remain inimitable. Unawareness opportunities rely on competitive neglect; generative AI may play a limited role, eroding advantage only when it makes rents legible to potential competitors and when search is directed toward these invisible markets.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title">Why Execution Matters For Strategy</div>
+          <div class="item-meta"><span class="status">With Brent Goldfarb · Working paper available upon request</span></div>
+        </div>
+      </summary>
+      <div class="abstract">This paper challenges two common assumptions: first, that competitive advantage always hinges on superior theory generation (idea selection); second, that firms are largely unconstrained in their selection of strategic options. Drawing on the Systems-Based View, this paper argues that when the set of viable strategies for firms are constrained by system interdependencies, standards, and bottlenecks, the locus of advantage shifts from theory development to theory enactment. Three implications follow: (1) superior execution can sometimes create temporary excludability—capturing rents by realizing known opportunities others struggle to enact; (2) under uncertainty, execution systems accelerate discovery, validation, and scaling; and (3) as bottlenecks migrate, advantage requires that a firm renew its systems of execution.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5395207" target="_blank">Teams And The Homophily Trap: Evidence From Open-Source Software</a></div>
+          <div class="item-meta"><span class="status">With Davidson Heath, Nathan Seegert, and Jeffrey Yang</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Many real-world teams—startups, scientific collaborations, and open-source software projects—form through self-selection rather than assignment. Yet most empirical research on team composition and performance focuses on teams that have already formed, or on field experiments where teams are created through random assignment. This paper focuses on how real-world teams form, and how formation processes those teams use shapes long-run performance. Using a panel of over 148,000 open-source software project-years from GitHub, this paper documents three main findings. First, homophily—the tendency for individuals to affiliate with similar others—is the dominant force in team formation. Monocultures are by far the most common team type. Second, team diversity improves project performance, especially for teams that begin as monocultures. Yet despite these benefits, many teams fail to diversify. We explain this puzzle by introducing the concept of the <em>homophily trap</em>: the very mechanism that enables early team cohesion also deters outsider entry, limiting long-run performance. Teams that escape the homophily trap by attracting and retaining even one outsider unlock better outcomes and greater momentum for future diversification. Finally, we show that there is a limit to these gains: beyond a threshold, coordination costs increase, leading to higher contributor exit and team fracture. Together, these findings reveal a core tradeoff in team formation: early interpersonal fit may come at the cost of long-run performance.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5021114" target="_blank">Sunk Costs And Experimental Strategy</a></div>
+          <div class="item-meta"><span class="status">With Hart Posen and Orie Shelef</span></div>
+        </div>
+      </summary>
+      <div class="abstract">A growing literature focuses attention on how actors experiment on their offering, idea, or theory. Most prior work in the business experimentation literature implicitly or explicitly assumes actors know the value of the next best use of the investments they have already made—indeed, these investments are usually viewed as sunk, having zero outside value. This paper introduces the possibility of an entrepreneur being uncertain about the value of their resources and considers the implications for experimental strategy. Using a formal model, this paper shows that sometimes actors should experiment to learn more about the value of their resources, rather than experiment to learn more about the value of their offering, idea, or theory. Relaxing the stylized assumption of an actor who is fully informed about the value of their resources overturns some of the recommendations in prior work about how an actor should craft their experimental strategy, and adds critical nuance to others. In particular, analysis of the model reveals that some actors who are uncertain about the value of their resources will experiment more frequently than they would otherwise, while other actors will experiment less frequently, if they experiment at all.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/abstract=5141854" target="_blank">Entrepreneurial Teams And The Theory-Based View</a></div>
+          <div class="item-meta"><span class="status">With Randy Westgren</span></div>
+        </div>
+      </summary>
+      <div class="abstract">The theory-based view argues that novel, valuable strategies come from the theories economic actors hold. A growing literature explores how entrepreneurs and managers evaluate the potential of a theory and organize to capture the value created from that theory. However, the theory-based view, along with many other related perspectives on value creation, assume, either implicitly or explicitly, an individual, stylized economic actor—an "entrepreneur-strategist"—in possession of a theory. This paper relaxes this stylized assumption, introducing the possibility that, sometimes, teams rather than individuals collectively author, test, refine, and commit to a theory. Using a formal model that leverages insights from pragmatism and social ontology, this paper makes explicit the individual and group processes required for a team to hold beliefs about a theory, communicate those beliefs and update them, and form intentions to act as the theory the team is collectively composing evolves over time. In so doing, this paper extends the potential of the theory-based view as a perspective to understand how groups—in particular, nascent entrepreneurial teams—form around a theory of value, refine it, and subsequently commit to act to realize the potential value that theory reveals.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4834613" target="_blank">Experimental Strategy With Entangled Ideas</a></div>
+          <div class="item-meta"><span class="status">With Jay Barney, Lyda Bigelow, and Orie Shelef</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Prior work in experimental strategy has largely assumed that actors make decisions about when and how to experiment on one business idea at a time. Even when prior work allows for the possibility that an actor may possess multiple business ideas, this work has yet to consider how decisions about when and how to experiment on one business idea might affect decisions about when and how to experiment on another idea. Using a formal model, this paper introduces the possibility of entangled ideas—ideas that are connected such that information about the value of one idea informs an actor about the value of another idea—and considers their implications for experimental strategy. Analysis of the model shows that the possibility of entangled ideas overturns many of the recommendations in prior work—changing whether an actor experiments or not, how the actor crafts a program of experimentation, and what the actor does after reviewing the results of an experiment.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4945550" target="_blank">Implementation Constraints And Business Experimentation</a></div>
+          <div class="item-meta"><span class="status">With Nathan Seegert, Orie Shelef, and Mu-Jeung Yang</span></div>
+        </div>
+      </summary>
+      <div class="abstract">In contrast to scientists, entrepreneurs do not experiment merely to understand phenomena—they do so to make better decisions. However, prior work has tended to assume that actors are unconstrained in their ability to respond to the information generated from experimentation. Building on a growing literature taking a pragmatic view of the entrepreneurial process, this paper argues that implementation constraints associated with particular entrepreneurial strategies significantly shape an actor's choices about when and how to experiment. The key insight of our formal model is that implementation constraints shift the value of experimentation, influencing whether entrepreneurs validate more or less promising ideas through experimentation. Implementation constraints can lead to surprising consequences, such as leading some actors to eschew experimentation even if an inexpensive, informative experiment is available and leading other actors to experiment when, absent implementation constraints, they would not do so. The model also illuminates how implementation constraints impact whether to run cheaper, less informative experiments or costlier, more informative experiments. Ultimately, introducing the possibility of implementation constraints suggests that some actors who, from the perspective of prior work, look like they are engaging in sub-optimal experimentation may not be overconfident or lack training. Rather, such actors could be selecting the optimal experimental strategy after considering implementation constraints.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4705883" target="_blank">Experimenting To Persuade</a></div>
+          <div class="item-meta"><span class="status">With Rebecca Karp and Orie Shelef</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Much of the prior work on experimentation rests upon the assumption that entrepreneurs and managers use—or should optimally adopt—a "scientific approach" to test possible decisions before making them. This paper offers an alternative view of experimental strategy, introducing the possibility that at least some business experiments privilege persuasion over generating unbiased information. In this view, actors may craft experiments designed to gain support for their ideas, even if doing so reduces the informativeness of the experiment. However, decision-makers are not naïve—they are aware that the results they are reviewing may be the product of a curated information environment. Using a formal model, this paper shows that under a wide range of conditions, actors prefer to enact a less than fully informative experiment designed to persuade—even when a fully-informative experiment is feasible at the same cost.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4503895" target="_blank">Stakeholder Competing Goals And Experimental Strategy</a></div>
+          <div class="item-meta"><span class="status">With Jay Barney and Orie Shelef</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Recent work in experimental strategy suggests that incorporating stakeholders can improve experimental decision-making by mitigating some of the frictions associated with business experimentation. However, this work maintains a crucial implicit assumption—that all actors share a common goal of maximizing profits—despite a vast literature showing that actors often have goals that go beyond pure profit maximization. This paper introduces the possibility of stakeholder competing goals and analyzes how goal conflict between stakeholders impacts an actor's experimental strategy. Using a model that considers various degrees of goal alignment and misalignment, we show that although involving stakeholders in experimental decision-making may sometimes improve outcomes, this potential remedy comes at a cost, as the presence of conflicting goals introduces new decision-making errors. More broadly, our results suggest that actors will accept the input of other stakeholders in strategic decision-making only when the costs of goal misalignment are small relative to the benefits of improved outcomes.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742193" target="_blank">Hiring A Co-Founder</a></div>
+          <div class="item-meta"><span class="status">With Rujuta Vaidya and Orie Shelef</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Using a novel set of administrative data, we demonstrate that founding teams often add "co-founders"—individuals newly associated with the firm with a substantial equity share—well after the venture has formalized. By taking advantage of the annual disclosure of private firm equity ownership in our dataset, we observe that approximately 12% of growing firms add such a co-founder in the first year following their incorporation. These non-investor, non-employee co-founders are identified across a broad range of sectors in our comprehensive, economy-wide sample. This phenomenon and its prevalence have received scant attention in prior work, including the literature on entrepreneurial founding teams, which tends to assume that the founding team formation process ends at a key early economic transition—in particular, formalization. The practice of adding a co-founder post-formalization raises interesting questions about the early organizational choices of new ventures, and suggests potentially underappreciated strategies for assembling human capital in young, growing firms.</div>
+    </details>
+
+  </section>
+
+  <!-- Publications -->
+  <section>
+    <h2 class="section-heading">Publications</h2>
+    <hr class="section-divider" />
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5050066" target="_blank">Average Treatment Effects And Unique Strategies</a></div>
+          <div class="item-meta">With Jason Snyder and Todd Zenger · <span class="journal">Strategy Science</span></div>
+        </div>
+      </summary>
+      <div class="abstract">What explains the increasing disconnect between empirical strategy research and real-world strategy? While empirical methods have evolved, notably in causal identification, this paper argues that empirical strategy's focus on population-level average treatment effects is fundamentally misaligned with the strategist's need for firm-specific insights. This misalignment poses a critical problem because strategic decisions are typically one-shot, non-diversifiable, and deeply interconnected with other firm-specific choices—thus, strategists require localized, firm-specific causal estimates rather than generalized averages. Through an extended empirical example, this paper demonstrates the limits of strategy's current approach of ever-more-precise identification and offers new methodological pathways to bridge the relevance gap. These paths forward aim to align empirical research with the real-world needs of strategy practitioners.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4948015" target="_blank">Towards A New Theory Of Experimental Strategy: A Response To Clark And Hunt</a></div>
+          <div class="item-meta">With Jay Barney and Orie Shelef · <span class="journal">Academy of Management Review</span></div>
+        </div>
+      </summary>
+      <div class="abstract"><em>Heisenberg Effects In Experimentation On Business Ideas</em> is part of a growing literature that recognizes that other considerations—beyond an experiment's informativeness about the value of a business idea and its cost—can determine when and how a firm will experiment. This paper—which focuses narrowly on the experimental impacts of Heisenberg effects on business experimentation—marks only the beginning of developing our understanding of the causes and consequences of experimental strategy. Understanding when and how firms experiment will likely create a research agenda that will probably extend over several years, and, to us, seems likely to be more fruitful than debates about whether or not quantum mechanics can be applied to the analysis of organizations and business.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4122634" target="_blank">Incumbent Incentives In Response to Entry</a></div>
+          <div class="item-meta">With Anita McGahan, Richard Saouma, and Orie Shelef · <span class="journal">Strategy Science</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Much of the prior work on incumbent response to entry has a "time machine" flavor to it. Essentially, the field of strategy suggests that the best response for managers of incumbent firms facing new competition is to run it back and make better choices: a more flexible organizational form, more effective pre-emptive investments, et cetera. Insofar as prior work considers the question of what a manager of an incumbent firm should do <em>in the midst of competition</em> with a new entrant, the advice on offer remains mostly generic templates—attack, compete, ignore, retreat—with no clear guidance about how to choose between them. This paper develops a framework of responses available to incumbent firms facing a range of potential entrants, and details when each of these strategies will be more, or less, effective. Crucially, insights revealed from an analysis of the framework upend some of the recommendations found in prior work, and broaden the range of optimal responses by incumbent firms to entry.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3581255" target="_blank">Heisenberg Effects In Experimentation On Business Ideas</a></div>
+          <div class="item-meta">With Orie Shelef and Jay Barney · <span class="journal">Academy of Management Review</span></div>
+        </div>
+      </summary>
+      <div class="abstract">The growing literature on business experimentation assumes that the choice about when and how to experiment on a business idea is, ultimately, a trade-off between the cost of an experiment and the value of the information it reveals. This paper captures the possibility that experimentation can also change the value of an idea—Heisenberg effects—in a formal model. Heisenberg effects often overturn the recommendations of prior work about when and how to experiment. For example, prior work suggests that actors should experiment when an experiment is informative and low cost. Adding Heisenberg effects to the analysis suggests that, sometimes, rational actors will not engage in highly informative experiments that are also low cost—even choosing costly experiments that provide little to no information about the value of an idea. Prior work also offers guidance for selecting between experimental techniques, arguing that rational actors choose a technique that maximizes information and minimizes cost. Adding Heisenberg effects to the analysis suggests that, sometimes, rational actors will choose more costly and less informative experimental techniques in order to optimize the net impacts of Heisenberg effects associated with the experiment.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4220338" target="_blank">Examining Resilient Psychosocial Function In A Series Of Isolated Arctic Ski Expeditions</a></div>
+          <div class="item-meta">With Nathan Smith, Louisa Bostock, Emma Barrett, Gro Sandal, and Marc Jones · <span class="journal">Stress and Health</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Expedition success requires that individuals and teams respond resiliently to the environmental, psychological, and social demands they face. Although some prior studies have discussed resilience in the context of extreme expedition activities there has been limited empirical work examining resilience in these settings. This study examines profiles of resilient function in seven individuals across three expeditions in the High Arctic. Using a structured daily diary, participants reported experiences of physical health, affect, team cohesion, and performance along with potential explanatory factors including sleep, stress appraisals, events, and the use of coping strategies. Notable intra- and inter-individual variability was observed in daily reports, and several significant relationships were found between markers of resilient physical and psychosocial function and potential explanatory factors. Overall, this study offers a unique, theoretically informed approach to the study of resilient functioning in extreme environments—moving beyond an abstract account of resilience in expedition settings by testing the relationship between daily events, coping strategies, reports of physical and psychological health, and resilient function.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3917981" target="_blank">The Theory-Based View: Entrepreneurial Microfoundations, Resources, And Choices</a></div>
+          <div class="item-meta">With Todd Zenger and Teppo Felin · <span class="journal">Strategic Management Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">We build on the theory-based view and highlight how an entrepreneur's theory can enable the creation of value. We point to three types of theories: theories of resource arbitrage, resource recombination, or resource investment that specializes resources to particular uses. However, possessing a unique theory is not enough. The realization of an entrepreneur's theory is contingent on matching it with the right organizational and governance-related choices. Entrepreneurs must make consequential decisions about protecting intellectual property, running experiments, acquiring resources, composing teams, and securing financing. We develop a contingent approach that enables entrepreneurs to match their theory of value with the appropriate forms of action, thereby providing entrepreneurs with a level of guidance to downstream choices that the current literature fails to provide.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3912917" target="_blank">Entrepreneurial Teams And Individual Well-Being</a></div>
+          <div class="item-meta">With Nathan Smith and Jana Thiel · <span class="journal">Revue de l'Entrepreneuriat</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Why do some individuals thrive during the process of new venture creation, while others experience the dark side of entrepreneurship? Building on self-determination theory and recent research on extreme teams, this paper argues that team dynamics are a critical, but relatively understudied, input to individual well-being in entrepreneurial settings. Entrepreneurship is most often a team sport, and this paper contributes to a growing literature on entrepreneurial well-being by exploring how individual self-regulation strategies and team dynamics interact to sculpt entrepreneurial outcomes.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4198483" target="_blank">Off-World Mental Health: Designing Well-Being Supportive Technologies For Deep Space Exploration</a></div>
+          <div class="item-meta">With Nathan Smith, Dorian Peters, Caroline Jay, Emma Barrett, and Gro Sandal · <span class="journal">JMIR Formative Research</span></div>
+        </div>
+      </summary>
+      <div class="abstract">During future long duration space exploration missions, humans will be exposed to combinations of extreme physical, psychological, and interpersonal demands. These demands create risks for safety, performance, health, and wellbeing of both individuals and crew. The communication latency in deep space means that explorers will increasingly have to operate independently and take responsibility for their own self-care and self-management. At present, several research programs are focused on developing and testing digital technologies and countermeasures that support the effective functioning of deep space crews. Although promising, these initiatives have been stimulated mostly by technological opportunity rather than cogent theory. In this paper, we argue that digital technologies developed for spaceflight should be informed by wellbeing supportive design principles and be cognizant of broader conversations around the development and use of digital health applications, especially pertaining to issues of autonomy, privacy, and trust. These issues are important for designing potentially mission critical health technologies and may be determining factors in the safe and successful completion of future off-world endeavors.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://www.sciencedirect.com/science/article/pii/S0148296321006536" target="_blank">Is A Reputation For Misconduct Harmful? Evidence From Corporate Venture Capital</a></div>
+          <div class="item-meta">With Sergey Anhokin, William Schulze, and Todd Morgan · <span class="journal">Journal of Business Research</span></div>
+        </div>
+      </summary>
+      <div class="abstract">This paper explores how three distinct types of reputation—experience, involvement, and misconduct—influence a corporate venture capital firm's ability to attract potential investments. Combining data on corporate venture capital firms with detailed information about lawsuits filed against those firms, we find that in our sample of corporate venture capital firms and startups the relationship between a firm's reputation and performance is much more nuanced than prior work suggests. Perhaps the biggest surprise of this study is the positive effect of a reputation for misconduct on the ability of the corporate venture capital firm to attract promising startups. Being implicated in legal disputes seems to raise the profile of the corporate venture capital firm, increasing the number of potential investments it sees.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://academic.oup.com/icc/article/30/4/905/6304974" target="_blank">Evaluating an Organizational Innovation: Evidence From The Conglomerate Merger Wave</a></div>
+          <div class="item-meta">With Peter Klein, Mo Chen, and Kathrin Zoeller · <span class="journal">Industrial and Corporate Change</span></div>
+        </div>
+      </summary>
+      <div class="abstract">At inception, every new organizational form is an innovation, and its value is largely unknown. How do we assess the value of new forms of economic organization? This paper applies an experimental-learning framework to explore how capital markets evaluate an organizational innovation using the conglomerate merger wave in the late 1960s and 1970s as an empirical setting. Results suggest that the initial market popularity of conglomerates, followed by their rapid decline, is indicative of investors attempting to determine the value of a new organizational form. We show that over time, investors systematically updated their beliefs about the value of the conglomerate form as a whole based on new information—positive and negative—about the largest and most newsworthy conglomerates. Our results suggest that financial market participants make judgements not only about specific companies, but about organizational structure itself.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mde.3450" target="_blank">The More Things Change, The More They Stay The Same: Firm Demand-Side Responses To Economic Shocks</a></div>
+          <div class="item-meta">With Erik Knudsen, Bram Timmermans, and Lasse Lien · <span class="journal">Managerial and Decision Economics</span></div>
+        </div>
+      </summary>
+      <div class="abstract">How firms should optimally respond to economic crises, in particular sudden reductions in demand, is a question both scholars and managers care about. This paper leverages a unique survey of Norwegian firms during the 2008 recession to better understand how firms with different capabilities and operating in different contexts develop their strategic responses to demand shocks. While some prior work has isolated and studied a particular type of response to a recession, a central contribution of this paper is the joint consideration of the broad portfolio of possible responses, and how and why firms choose between those responses. Our analysis offers insight into the heterogeneity of firm responses to an economic crisis, and important antecedents such as firm-specific capabilities that drive those decisions.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/mde.3191" target="_blank">Corporate Diversification And Innovation: Managerial Myopia Or Inefficient Internal Capital Markets?</a></div>
+          <div class="item-meta">With Peter Klein · <span class="journal">Managerial and Decision Economics</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Which is more innovative: the decentralized, diversified large organization or a smaller, more narrowly focused entrepreneurial firm? This paper takes a fresh look at the innovation and diversification question using a comprehensive sample of diversified and non-diversified firms and a novel analytical approach that teases out the mechanisms shaping the innovation-diversification relationship. Results reveal a robust and negative correlation between diversification and innovation, along with evidence that diversification reduces innovation by discouraging investment. However, the analysis also suggests that internal capital market inefficiencies, not managerial myopia, is primarily responsible for the negative relationship between diversification and innovation.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://journals.aom.org/doi/10.5465/amr.2017.0451" target="_blank">Social Objectivity and Entrepreneurial Opportunity: Implications For Entrepreneurship And Management</a></div>
+          <div class="item-meta">With Russ McBride · <span class="journal">Academy of Management Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Entrepreneurial opportunities, along with everything else management scholars study, involves social entities—so it is critically important that the field understand what a social entity is and what makes social institutions like markets, organizations, and profit opportunities real and objective. This paper shows that a clearer understanding of the nature of social institutions resolves several ongoing puzzles about the nature of entrepreneurial opportunity—one of the field's most pressing and important questions—and offers a new perspective from which to understand the nature of value and the particulars of the entrepreneurial process.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sej.1319" target="_blank">An Economic Model Of Strategic Entrepreneurship</a></div>
+          <div class="item-meta">With Randy Westgren · <span class="journal">Strategic Entrepreneurship Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Although there is broad consensus that the essence of entrepreneurship is the creation and capture of new economic value, scholars have struggled to convert this central axiom to the particulars of the entrepreneurial process. This paper offers a formal model of entrepreneurial entry grounded in neoclassical economics, modeling entry and competition as occurring simultaneously in production technology space and product attribute space. A central feature of the model is to disaggregate the eponymous 'entrepreneurial rent' into four potential and distinct rent streams: arbitrage, innovation, organization and uncertainty-bearing. Examining these mechanisms together reveals implications for how best to organize value creation and capture throughout the entrepreneurial process, and to conceptualize value capture as a set of distinct rent streams available to multiple stakeholders over time.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sej.1271" target="_blank">Prediction And Control: An Agent-Based Simulation Of The Entrepreneurial Problem Space</a></div>
+          <div class="item-meta">With René Mauer, Jan Schlüter, and Malte Brettel · <span class="journal">Strategic Entrepreneurship Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Search and learning are central to the entrepreneurial process, and a longstanding question in the entrepreneurship literature are the conditions under which search processes that privilege information-gathering are superior to strategies that emphasize immediate action and learning-by-doing. Prior theoretical work underpinning these two perspectives tends to take the environment as given and immutable, differing only in their recommendations for how to search given an unchanging environment. This paper contributes to a growing body of work in strategy and entrepreneurship that challenges this environment-as-given assumption, developing a simulated world (an agent-based model) as a laboratory to examine the entrepreneurial process. We populate this world with makers attempting to build valuable offerings, and consumers representing the market for those artifacts. The makers in this world can use one of two processes to create their offerings. The first process focuses on gathering information from consumers. The second eschews market feedback entirely, focusing instead on other agent-makers and attempting to enroll them in co-creating their product or service. We use environmental uncertainty as a shift parameter to explore the boundary conditions of these two archetypal approaches, revealing a much more nuanced relationship between the nature of an idea, environment, and search technique than suggested by prior work.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://journals.sagepub.com/doi/full/10.1177/1476127016649943" target="_blank">Problems, Theories And Governing the Crowd</a></div>
+          <div class="item-meta">With Jackson Nickerson and Todd Zenger · <span class="journal">Strategic Organization</span></div>
+        </div>
+      </summary>
+      <div class="abstract">When, where and under what conditions does a diffuse or open approach to innovation make sense, and given the decision to engage in distributed innovative activity, how should managers choose between particular approaches? Much of the prior work on crowd-powered innovation through mechanisms such as crowdsourcing or blockchain governance is diverse and often contradictory. This paper argues that this question is, fundamentally, a design problem: economic actors can successfully catalyze innovation when they efficiently match attributes of the problem or domain of problems ripe for innovation to different modes of solution search. This paper argues for the central role of comparative governance in deciding how to organize innovative activity generally, and distributed innovation in particular. Fundamentally, a theory of distributed innovation requires the ability to understand its costs and benefits, when an economic actor would choose it over alternative forms of organization, and the factors that, on the margin, affect its boundary conditions.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://journals.aom.org/doi/full/10.5465/amr.2016.0035" target="_blank">On Opportunities: Philosophical And Empirical Implications</a></div>
+          <div class="item-meta">With Jay Barney, Sharon Alvarez, and Russ McBride · <span class="journal">Academy of Management Review</span></div>
+        </div>
+      </summary>
+      <div class="abstract">The field of entrepreneurship has been obsessed with whether entrepreneurial opportunities are created or discovered for almost two decades. Although the question can at times seem esoteric and impractical, the implications for research and practice are actually quite profound, which in part explains the sustained interest in the topic. Scholars of the "discovery view" of entrepreneurial opportunity assert that opportunities are objective and real. In their search for a coherent intellectual foundation for this perspective, some prior work draws from philosophy's toolkit to position the "opportunity discovery versus opportunity creation" debate within a broader debate about critical realism and social constructionism. We show that adopting a critical realist perspective to analyze the nature of opportunity is unsuccessful at resolving a series of internal contradictions, and generates implications that are unpalatable. Further, we argue that the debate about critical realism and social constructionism is itself suspect, resulting from a basic misunderstanding and resulting mishandling of both perspectives.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://www.sciencedirect.com/science/article/pii/S0929119916300426" target="_blank">Relationship Banking And Conflicts Of Interest: Evidence From German IPOs</a></div>
+          <div class="item-meta">With Peter Klein and Kathrin Zoeller · <span class="journal">Journal of Corporate Finance</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Continued consolidation of the financial services industry has focused attention on universal banks—financial intermediaries that perform both commercial and investment banking. Some have argued that while universal banks can, in principle, improve the quality of corporate governance through the monitoring of their client companies. Critics argue that universal or "relationship" banking actually promotes conflict of interest. This paper compares the impact of universal banking in its double role of lender and underwriter by comparing universal-bank-underwritten initial public offerings with those written by specialized banks. If investors perceive universal banks as underwriters with conflicts of interest, then lower initial prices could be compensation for the potential hazards associated with the underwriter's pre-existing lending relationships. Alternatively, investors might perceive universal banks as certifiers of high quality issues, which would encourage higher offer prices. Results reveal that universal-bank affiliation is correlated with higher first-day returns, suggesting evidence of underpricing. However, these early returns are uncorrelated with long-term performance, suggesting that underpricing compensates for potential conflicts of interest. Our results also suggest that preexisting bank relationships, rather than issuer characteristics, determine an entrepreneurial firm's choice of underwriter.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sej.1215" target="_blank">Bridging Behavioral Models And Theoretical Concepts: Effectuation and Bricolage In The Opportunity Creation Framework</a></div>
+          <div class="item-meta">With Chris Welter and René Mauer · <span class="journal">Strategic Entrepreneurship Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Opportunity creation, effectuation, and bricolage are three related theories in entrepreneurship, each describing how entrepreneurs create new economic value through action. Although prior work often conceptualizes these concepts as interrelated, precisely how they relate to and compliment one another and where they diverge remains unclear. This paper examines the roots of each of these concepts and their underlying assumptions and organizes them within a unifying conceptual frame. Analysis of this framework reveals a set of entailing implications that can guide future work in entrepreneurship, and advances our collective understanding of value creation and capture in strategy, entrepreneurship, and organization theory.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://journals.aom.org/doi/10.5465/amr.2013.0244" target="_blank">Realism In The Study Of Entrepreneurship: A Response</a></div>
+          <div class="item-meta">With Jay Barney, Sharon Alvarez, and Russ McBride · <span class="journal">Academy of Management Review</span></div>
+        </div>
+      </summary>
+      <div class="abstract">The single overarching problem in the social sciences has been finding suitable intellectual foundations for them. The question that torments social scientists is: how is it possible that we seem to uncover new objective facts amidst social structures that are subjective and man-made? In other words, how is it possible to make 'objective' discoveries in the field of management, or to talk about the 'objectivity' of entrepreneurial opportunity, in systems that are distinctly different from the natural world? This article argues that the underlying intellectual foundations in management scholarship broadly, and the field of entrepreneurship in particular, are indeed fundamentally flawed, but that the threat is neither inextricable nor existential. The theories that scholars in the social sciences have borrowed to buttress their theorizing in prior work have been supplanted by a host of new candidate theories. We detail one of these theories—social ontology—and show how it can be fruitfully applied to the question of created versus discovered opportunities in entrepreneurship.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1002/sej.1188" target="_blank">The Strength of Strong Ties In An Emerging Industry: A Joint Test For The Effects of Status Hierarchies And Personal Ties In Venture Capitalist Decision-Making</a></div>
+          <div class="item-meta">With Rolf Wüstenhagen and Nina Hampl · <span class="journal">Strategic Entrepreneurship Journal</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Prior work in entrepreneurial finance has identified two ways in which social ties influence venture capital investment decisions: directly through personal ties and indirectly through status hierarchies. Previous research has examined these effects independently. Our study is the first to perform a joint examination of the role of social ties and status hierarchies in venture capital decision-making. We examine the relative importance of these two mechanisms through an adaptive choice-based conjoint experiment comprising 3,132 investment decisions made by 86 venture capitalists from the United States and Europe. Our findings reveal that personal ties are more important in venture capital decision-making when compared to the relative status of other venture capital firms participating in the investment syndicate, and this effect increases as investment uncertainty increases. Building on our main findings, we show that the influence of personal ties is less pronounced in the European investment community, as compared to more densely networked U.S. investors. We also find a U-shaped relationship between venture capitalist experience and the influence of personal networks on investment decisions.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://journals.sagepub.com/doi/full/10.1177/0149206312441624" target="_blank">Skirting The Issues? Experimental Evidence Of Gender Bias In IPO Prospectus Evaluations</a></div>
+          <div class="item-meta">With Lyda Bigelow, Leif Lundmark, and Julie McLean-Parks · <span class="journal">Journal of Management</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Given that women executives are present in the top management teams of IPO firms in increasing numbers, the lack of female-led entrepreneurial firms navigating the going-public process is puzzling—especially since women-owned private businesses represent almost half of the new businesses formed in the United States, with patterns of founding similar to male-owned businesses. These facts hint at a potentially larger problem: a gender-based financing gap for privately-held firms. We test whether investor perceptions are aligned with these empirical patterns by constructing a simulated initial public offering tombstone, manipulating the gender demographics of the top management team, and using a sample of MBA students to evaluate the offering. Our results show that female CEOs are disproportionately disadvantaged in their ability to attract growth capital when all other factors are controlled. Despite identical personal qualifications and firm financials, firms led by females were seen as having a poorer strategic position than those led by males, female Founder/CEOs were perceived as less capable than their male counterparts, and IPOs led by female Founder/CEOs were considered less attractive investments.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://www.sciencedirect.com/science/article/pii/S088390261100108X" target="_blank">Exploring Country-Level Institutional Arrangements On The Rate And Type Of Entrepreneurial Activity</a></div>
+          <div class="item-meta">With Pekka Stenholm and Zoltan Acs · <span class="journal">Journal of Business Venturing</span></div>
+        </div>
+      </summary>
+      <div class="abstract">Despite decades of sustained scholarly inquiry, we still struggle to explain why rates of entrepreneurial activity vary widely across regions and countries. Traditional explanations have tended to focus on the influence of entrepreneurial framework conditions on new venture creation, arguing that the presence and strength of these conditions explain observed differences in the rate and type of entrepreneurial activity. Unfortunately, reality did not get the memo. Empirical tests of this conjecture have produced mixed, muddled results and attempts to implement 'entrepreneur-friendly' policies in nations, regions, and cities have produced unexpected, undesired outcomes. This paper contributes to the literature on institutions and entrepreneurship by showing that various framework conditions and policy have differential effects on the rate of entrepreneurial activity and what type of entrepreneurial firms emerge. Crucially, we show that policies and institutional support structures that focus on high-growth entrepreneurship can suppress more ordinary, workaday entrepreneurial activity and that policy interventions that attempt to promote entrepreneurship more broadly can suppress the formation and growth of high impact entrepreneurial firms. We find support for our conjectures using the Global Entrepreneurship Monitor dataset, using a novel multidimensional measure of a country's entrepreneurial environment.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://link.springer.com/article/10.1007/s11187-009-9247-x" target="_blank">Strategic Alliances In Venture-Backed Firms: An Empirical Examination</a></div>
+          <div class="item-meta">With Haizhi Wang, Shu Han, and Michael Ensley · <span class="journal">Small Business Economics</span></div>
+        </div>
+      </summary>
+      <div class="abstract">A growing literature examines the formation of strategic alliances as an important value-added role provided by venture capital firms. This paper contributes to this literature by examining two related questions: whether venture capital firms use strategic alliances as a substitute or compliment to capital infusion, and how venture capital firms use alliances as a means to mitigate different types of risk. Results from a sample of 2,505 venture-backed startups reveal that venture capital firms treat alliance formation as a substitute for capital infusion, and that the breadth of the network of syndication partners investing in the startup increases the number of its strategic alliances. We also find intentionality in alliance formation. Specifically, venture-backed firms operating in industry environments characterized by technical risk are more likely to form alliances with partners capable of mitigating technical risks; and firms operating in environments characterized by market risk are more likely to form alliances with partners capable of mitigating market risk. Our findings lend additional support to the perspective that alliances represent an important mechanism through which venture capital firms add value to their portfolio companies.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://www.tandfonline.com/doi/abs/10.1080/13691060902975128" target="_blank">Does State Of Incorporation Matter For New Ventures? Evidence From Venture Capital Investment And The Going-Public Process</a></div>
+          <div class="item-meta">With Maya Weismann and Haizhi Wang · <span class="journal">Venture Capital</span></div>
+        </div>
+      </summary>
+      <div class="abstract">In the United States, entrepreneurial firms choose the state in which they incorporate, and are subject to the laws of the state in which they are incorporated. Incorporating in Delaware is a common move for startups, especially those interested in attracting venture capital. Using a large sample of privately-held companies, we empirically investigate the implications of Delaware incorporation and examine its effect on access to venture capital financing and the going-public process. Results suggest that companies incorporated in Delaware receive more venture financing and attract more involvement from different venture capitalists than startups incorporated elsewhere. In addition, Delaware incorporated venture-backed firms are more likely to go public, get to a liquidity event faster, and generate more exit value (IPO proceeds and acquisition value) than similar firms incorporated elsewhere. Overall, this study reveals the first empirical evidence about the importance of state laws to privately held, informationally opaque firms seeking venture capital support.</div>
+    </details>
+
+  </section>
+
+  <!-- Courses -->
+  <section>
+    <h2 class="section-heading">Courses</h2>
+    <hr class="section-divider" />
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://docs.google.com/document/d/17IkpSbeZ0Yd7XJzqutfC0RnM69EN9cBQR_EhpR4Y4rY/edit?usp=sharing" target="_blank">ENG 5790 — The Business of Entrepreneurship</a></div>
+        </div>
+      </summary>
+      <div class="course-description">This course is built on the premise that the core "meta-skill" you have refined in the School of Engineering—finding and solving problems—is the fundamental engine behind the opaque "entrepreneurial capability" required for career success. Using the entrepreneurial context as an experimental laboratory and your team as a petri dish, we will prove that you can apply your current technical toolkit to add value across every area of a modern enterprise. This includes domains often considered "off-limits" to engineers, such as organizational design and human resources, market research and analysis, sales and business development, technology licensing, and operations. Whether you are launching your own startup, joining a small firm, or navigating an established enterprise, these skills apply at every scale; the entire company is your lane.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://docs.google.com/document/d/1XBCqAiwegKmPxkPaTdui0rJblo2H7L38fUPt9Z9ByO0/edit?usp=sharing" target="_blank">DES 4835 — Design Entrepreneurship</a></div>
+        </div>
+      </summary>
+      <div class="course-description">This course is designed to help artists, designers, and makers—individuals skilled at bringing new things into the world—gain a better understanding of how to durably embed what they create within a market context. The core claim of the course is that everything humans create is <em>designed</em>, including the social institutions we work in and through, the markets into which products are introduced, and organizations we create to produce them. If this is true, this implies that artists, makers, designers and the like already have much of the native capability to quickly understand the technical aspects of the entrepreneurial process. Leavened with a pinch of economic reasoning and business vocabulary, people just like you can be (and have been) incredibly effective at envisioning all manner of things, getting them built, and injecting them into the world.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://docs.google.com/document/d/1lVKQ4LQ5ExJOyHlXOtK4QUSX2iWMuIKYeMKGOVxhvwo/edit?usp=sharing" target="_blank">ENT 5850 — AI For Entrepreneurs</a></div>
+        </div>
+      </summary>
+      <div class="course-description">AI tools will soon reach the point where they can replicate the entire output of human employees. Instead of needing to hire a designer, you can use GPT-6 to design for you. There will be far less need for software engineers, sales and support staff, and SEO blog post writers. The theory is that—sooner or later—an ambitious founder could outsource the work they would use employees for to an army of artificially intelligent agents. Theoretically, this would allow entrepreneurs to focus on only tackling their most important competitive advantage. This is not just a claim worth examining or something fun to talk about. It is something to attempt to achieve, right now. So we will.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://docs.google.com/document/d/1TLdPcI9eDQUuOONEHtL2GQfxZqt78KmW5eQl3AyWQ8s/edit?usp=sharing" target="_blank">ENT 6810 — Venture Foundations</a></div>
+        </div>
+      </summary>
+      <div class="course-description">In this course, I assert—and then hope to demonstrate—that the conventional understanding of entrepreneurship is under-specified and horribly misshapen, and that this brokenness is at the root of the problems we have teaching it and helping individuals succeed at it. We are going to re-think entrepreneurship and the entrepreneurial process and attempt to develop a coherent, systematic, and evidence-based point of view about it. This point of view will sometimes be at odds with both conventional wisdom and current fashion in entrepreneurship education, and we are cool with that. We will think more carefully and comprehensively about what entrepreneurship is; whether there are distinct entrepreneurial skills or capabilities; if and how they could be developed; and where, and by whom. We will map the terrain of the entrepreneurial process, exploring its hidden corners and learning what we can.</div>
+    </details>
+
+    <details>
+      <summary>
+        <span class="toggle-icon">▶</span>
+        <div class="item-content">
+          <div class="item-title"><a href="https://docs.google.com/document/d/11YDu-3HXSufPRbu4z7kbJCHUGXpbr_SbvspQK9zrvEw/edit?usp=sharing" target="_blank">ENT 6820 — Venture Trends</a></div>
+        </div>
+      </summary>
+      <div class="course-description">Thinking about the future—envisioning it, preparing for it, making decisions in the face of uncertainty about it, and (when possible) working to bring a specific future into existence—that is what we focus on in this course. Every innovative idea or technology represents a potential future. Each of these potential futures is auditioning to be the <em>actual</em> future. So, how does this work? What's the role of human beings in this process—are we spectators in an evolutionary process, and our sense of agency largely an illusion, or can we bring particular futures into existence? Can we predict which of the branches in the timeline becomes our actual future? If we can't, what are the entailing implications? If we can, what are the entailing implications?</div>
+    </details>
+
+  </section>
+
+</div>
+</body>
+</html>
